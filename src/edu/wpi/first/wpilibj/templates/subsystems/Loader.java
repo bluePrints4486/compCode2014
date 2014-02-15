@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.templates.OI;
 import edu.wpi.first.wpilibj.templates.RobotMap;
 import edu.wpi.first.wpilibj.templates.commands.CatapultFree;
+import edu.wpi.first.wpilibj.templates.commands.CatapultIdle;
 import edu.wpi.first.wpilibj.templates.commands.CatapultManual;
 
 
@@ -37,11 +38,17 @@ public class Loader extends Subsystem {
         
     }
     
-    public void manual(){
-        loaderTalon.set(OI.systemsJoystick.getY());
-        
+    public void manual(boolean direction){
+        if(direction){
+            loaderTalon.set(-loaderSpeed);
+        }else{
+            loaderTalon.set(loaderSpeed);
+        }
     }
     
+    public void stop(){
+        loaderTalon.set(0);
+    }
     
     public boolean free(){
         if(init){
@@ -84,7 +91,7 @@ public class Loader extends Subsystem {
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand
-        //setDefaultCommand(new CatapultManual());
+        setDefaultCommand(new CatapultIdle());
 
     }
 }

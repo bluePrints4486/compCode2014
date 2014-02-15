@@ -2,8 +2,6 @@
 package edu.wpi.first.wpilibj.templates;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.Button;
-import edu.wpi.first.wpilibj.buttons.DigitalIOButton;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.templates.commands.CatapultFree;
 import edu.wpi.first.wpilibj.templates.commands.CatapultLower;
@@ -14,7 +12,6 @@ import edu.wpi.first.wpilibj.templates.commands.PassSequence;
 import edu.wpi.first.wpilibj.templates.commands.PickupDown;
 import edu.wpi.first.wpilibj.templates.commands.PickupUp;
 import edu.wpi.first.wpilibj.templates.commands.ShiftHigh;
-import edu.wpi.first.wpilibj.templates.commands.ShiftLow;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -33,19 +30,30 @@ public class OI {
     public static final JoystickButton lowerPickup = new JoystickButton(systemsJoystick,2);
     public static final JoystickButton raisePickup = new JoystickButton(systemsJoystick,3);
     public static final JoystickButton nudgeLauncher = new JoystickButton(systemsJoystick,4);
-    public static final JoystickButton freeCatapult = new JoystickButton(systemsJoystick,7);
     public static final JoystickButton pass = new JoystickButton(systemsJoystick,5);
+    public static final JoystickButton reload = new JoystickButton(systemsJoystick,8);
+    public static final JoystickButton freeCatapult = new JoystickButton(systemsJoystick,9);
+    public static final JoystickButton lowerCatapult = new JoystickButton(systemsJoystick,7);
+    public static final JoystickButton raiseCatapult = new JoystickButton(systemsJoystick,6);
+    
+    
     
     public OI(){
         shiftHigh.whileHeld(new ShiftHigh());
         
         launch.whenPressed(new LaunchSequence());
+        
         lowerPickup.whileHeld(new PickupDown());
         raisePickup.whileHeld(new PickupUp());
-        nudgeLauncher.whileHeld(new NudgeLauncher());
-        freeCatapult.whenPressed(new CatapultFree());
-        pass.whenPressed(new PassSequence());
         
+        nudgeLauncher.whileHeld(new NudgeLauncher());
+        reload.whenPressed(new CatapultLower());
+        
+        pass.whenPressed(new PassSequence());
+        freeCatapult.whenPressed(new CatapultFree());
+        
+        lowerCatapult.whileHeld(new CatapultManual(true));
+        raiseCatapult.whileHeld(new CatapultManual(false));
         
     }
     
