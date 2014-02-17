@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.templates.commands.NudgeLauncher;
 import edu.wpi.first.wpilibj.templates.commands.PassSequence;
 import edu.wpi.first.wpilibj.templates.commands.PickupDown;
 import edu.wpi.first.wpilibj.templates.commands.PickupUp;
+import edu.wpi.first.wpilibj.templates.commands.ReloadSequence;
 import edu.wpi.first.wpilibj.templates.commands.ShiftHigh;
 
 /**
@@ -31,10 +32,11 @@ public class OI {
     public static final JoystickButton raisePickup = new JoystickButton(systemsJoystick,3);
     public static final JoystickButton nudgeLauncher = new JoystickButton(systemsJoystick,4);
     public static final JoystickButton pass = new JoystickButton(systemsJoystick,5);
+    public static final JoystickButton lowerCatapult = new JoystickButton(systemsJoystick,6);
+    public static final JoystickButton raiseCatapult = new JoystickButton(systemsJoystick,7);
     public static final JoystickButton reload = new JoystickButton(systemsJoystick,8);
     public static final JoystickButton freeCatapult = new JoystickButton(systemsJoystick,9);
-    public static final JoystickButton lowerCatapult = new JoystickButton(systemsJoystick,7);
-    public static final JoystickButton raiseCatapult = new JoystickButton(systemsJoystick,6);
+    
     
     
     
@@ -47,7 +49,7 @@ public class OI {
         raisePickup.whileHeld(new PickupUp());
         
         nudgeLauncher.whileHeld(new NudgeLauncher());
-        reload.whenPressed(new CatapultLower());
+        reload.whenPressed(new ReloadSequence());
         
         pass.whenPressed(new PassSequence());
         freeCatapult.whenPressed(new CatapultFree());

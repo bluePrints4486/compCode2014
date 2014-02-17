@@ -6,18 +6,16 @@
 package edu.wpi.first.wpilibj.templates.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
-import edu.wpi.first.wpilibj.command.WaitCommand;
 
 /**
  *
  * @author karl
  */
-public class AutonomousSequence extends CommandGroup {
+public class ReloadSequence extends CommandGroup {
     
-    public AutonomousSequence() {
-        addSequential(new AutoDrive(1.8,1,0));
-        //addSequential(new WaitCommand(.2));
-        addSequential(new LaunchSequence());
+    public ReloadSequence() {
+        addSequential(new CatapultLower());
+        addSequential(new CatapultFree());
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());

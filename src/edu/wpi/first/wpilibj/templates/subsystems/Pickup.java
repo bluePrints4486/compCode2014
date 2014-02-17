@@ -36,7 +36,7 @@ public class Pickup extends Subsystem {
     
     public boolean lower(){
         if(lowerSwitch.get()){
-            pickup.setLeftRightMotorOutputs(.45, -.45);
+            pickup.setLeftRightMotorOutputs(.75, -.75);
         }else{
             pickup.setLeftRightMotorOutputs(0, 0);
             return true;

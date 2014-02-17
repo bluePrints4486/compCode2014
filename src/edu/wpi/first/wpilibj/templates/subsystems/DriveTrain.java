@@ -53,6 +53,7 @@ public class DriveTrain extends Subsystem {
         drive.drive(speed, curve);
         //if out of time
         if(driveTimer.get()>time){
+            init= true;
             drive.drive(0, 0);
             return true;
         }

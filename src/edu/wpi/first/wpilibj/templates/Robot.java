@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 import edu.wpi.first.wpilibj.templates.commands.AutonomousSequence;
+import edu.wpi.first.wpilibj.templates.commands.ReloadSequence;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -25,6 +26,7 @@ import edu.wpi.first.wpilibj.templates.commands.AutonomousSequence;
 public class Robot extends IterativeRobot {
 
     Command autonomousCommand;
+    Command reload;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -33,6 +35,7 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
         // instantiate the command used for the autonomous period
         autonomousCommand = new AutonomousSequence();
+        reload = new ReloadSequence();
 
         // Initialize all subsystems
         CommandBase.init();
@@ -56,6 +59,8 @@ public class Robot extends IterativeRobot {
         // continue until interrupted by another command, remove
         // this line or comment it out.
         autonomousCommand.cancel();
+        reload.start();
+        
     }
 
     /**
