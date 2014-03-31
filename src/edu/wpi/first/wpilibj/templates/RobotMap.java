@@ -7,7 +7,14 @@ package edu.wpi.first.wpilibj.templates;
  * floating around.
  */
 public class RobotMap {
+    public static final double pickUPraiseSpeen = .92;
+    public static final double pickupLowerSpeed = .92;
     
+    
+    //auto
+    public static final double drivetime = 2.5;
+    public static final double drivSpeed = .6;
+    public static final double curve = 0;
     
     public static final int Left_Talon = 1,
                             Right_Talon = 2,
@@ -23,7 +30,8 @@ public class RobotMap {
                             Pickup_Upper_Stop = 5,
                             Pickup_Lower_Stop = 6,
                             Launcher_Stop = 7,
-                            Compressor_Switch = 8;
+                            Compressor_Switch = 8,
+                            Launcher = 9;
     
     public static final int Shifter_Low = 1,
                             Shifter_High = 2,

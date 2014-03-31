@@ -7,6 +7,7 @@ package edu.wpi.first.wpilibj.templates.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.command.WaitCommand;
+import edu.wpi.first.wpilibj.templates.RobotMap;
 
 /**
  *
@@ -15,7 +16,7 @@ import edu.wpi.first.wpilibj.command.WaitCommand;
 public class AutonomousSequence extends CommandGroup {
     
     public AutonomousSequence() {
-        addSequential(new AutoDrive(1.8,1,0));
+        addSequential(new AutoDrive(RobotMap.drivetime,RobotMap.drivSpeed,RobotMap.curve));
         //addSequential(new WaitCommand(.2));
         addSequential(new LaunchSequence());
         // Add Commands here:

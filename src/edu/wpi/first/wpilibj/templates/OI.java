@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.templates.commands.PickupDown;
 import edu.wpi.first.wpilibj.templates.commands.PickupUp;
 import edu.wpi.first.wpilibj.templates.commands.ReloadSequence;
 import edu.wpi.first.wpilibj.templates.commands.ShiftHigh;
+import edu.wpi.first.wpilibj.templates.commands.StopLauncher;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -49,6 +50,7 @@ public class OI {
         raisePickup.whileHeld(new PickupUp());
         
         nudgeLauncher.whileHeld(new NudgeLauncher());
+        nudgeLauncher.whenReleased(new StopLauncher());
         reload.whenPressed(new ReloadSequence());
         
         pass.whenPressed(new PassSequence());

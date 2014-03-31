@@ -36,7 +36,7 @@ public class Pickup extends Subsystem {
     
     public boolean lower(){
         if(lowerSwitch.get()){
-            pickup.setLeftRightMotorOutputs(.75, -.75);
+            pickup.setLeftRightMotorOutputs(RobotMap.pickupLowerSpeed, -RobotMap.pickupLowerSpeed);
         }else{
             pickup.setLeftRightMotorOutputs(0, 0);
             return true;
@@ -46,10 +46,13 @@ public class Pickup extends Subsystem {
     
     public boolean raise(){
         //System.out.println("Pickup Upper"+upperSwitch.get());
+        
         if(upperSwitch.get()){
-            pickup.setLeftRightMotorOutputs(-1, 1);
+            pickup.setLeftRightMotorOutputs(-RobotMap.pickUPraiseSpeen, RobotMap.pickUPraiseSpeen);
+            
         }else{
             pickup.setLeftRightMotorOutputs(0, 0);
+            System.out.println("UPPER PICKUP");
             return true;
         }
         return false;

@@ -25,9 +25,9 @@ public class CompresserSub extends Subsystem {
     
     public void compress(){
         if(!compressorSwitch.get()){
-            compress.set(Relay.Value.kOn);
+            compress.set(Relay.Value.kForward);
         }else if(compressorSwitch.get()){
-            compress.set(Relay.Value.kOff);
+            compress.set(Relay.Value.kOff );
         }
         
     /*
