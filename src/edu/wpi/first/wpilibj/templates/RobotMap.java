@@ -7,8 +7,8 @@ package edu.wpi.first.wpilibj.templates;
  * floating around.
  */
 public class RobotMap {
-    public static final double pickUPraiseSpeen = .92;
-    public static final double pickupLowerSpeed = .92;
+    public static final double pickUPraiseSpeen = .60;
+    public static final double pickupLowerSpeed = .40;
     
     
     //auto

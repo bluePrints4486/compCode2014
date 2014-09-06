@@ -30,14 +30,7 @@ public class CompresserSub extends Subsystem {
             compress.set(Relay.Value.kOff );
         }
         
-    /*
-        compress.start();
-        System.out.println("Compressor Started");
-        if (compress.enabled()){
-            System.out.println("Compressor thread runing");
-        }
-        * 
-    */
+    
     }
 
     public void initDefaultCommand() {

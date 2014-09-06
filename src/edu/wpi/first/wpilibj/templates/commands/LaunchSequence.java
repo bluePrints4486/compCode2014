@@ -5,6 +5,7 @@
 package edu.wpi.first.wpilibj.templates.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
+import edu.wpi.first.wpilibj.templates.subsystems.Loader;
 
 /**
  *
@@ -18,6 +19,7 @@ public class LaunchSequence extends CommandGroup {
         addSequential(new Launch());
         addSequential(new CatapultLower());
         addSequential(new CatapultFree());
+        
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());

@@ -56,9 +56,7 @@ public class Launcher extends Subsystem {
             }
         
         }else{
-    
-            
-            
+
             switchTriggered = true;
             
         }

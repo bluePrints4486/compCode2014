@@ -28,7 +28,7 @@ public class Pickup extends Subsystem {
     // here. Call these from Commands.
     
     public void pickupControl(){
-        pickup.setMaxOutput(.45);
+        pickup.setMaxOutput(.85);
         
             pickup.setLeftRightMotorOutputs(OI.systemsJoystick.getY(), -OI.systemsJoystick.getY());
         

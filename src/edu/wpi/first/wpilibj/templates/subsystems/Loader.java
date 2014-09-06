@@ -28,12 +28,16 @@ public class Loader extends Subsystem {
     boolean init = true;
     
     public boolean lower(){
-        loaderTalon.set(-loaderSpeed);
-       
         if(!lowerEndstop.get()){
-            loaderTalon.set(0);
-            return true;
+                loaderTalon.set(0);
+                return true;
         }
+        if(lowerEndstop.get()){
+            loaderTalon.set(-loaderSpeed);
+
+            
+        }
+        
         return false;
         
     }

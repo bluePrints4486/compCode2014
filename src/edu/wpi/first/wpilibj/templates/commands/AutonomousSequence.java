@@ -17,8 +17,9 @@ public class AutonomousSequence extends CommandGroup {
     
     public AutonomousSequence() {
         addSequential(new AutoDrive(RobotMap.drivetime,RobotMap.drivSpeed,RobotMap.curve));
-        //addSequential(new WaitCommand(.2));
-        addSequential(new LaunchSequence());
+            addSequential(new WaitCommand(.2));
+        addParallel(new PickupDown());
+        addSequential(new Launch());
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());
